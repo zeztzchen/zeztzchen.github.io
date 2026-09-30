@@ -1,28 +1,26 @@
 ---
 title: "My First Post"
-date: "2026-01-08T02:00:00+08:00"
-description: "My hopes and goals for the year ahead."
+date: "2026-09-30T09:30:00+08:00"
+description: "写下这一年的期待和目标。"
 tags: ["2026"]
 ---
 
+欢迎来到我的第一篇博客！
 
+走进 2026 年，我想写下这一年的期待和目标。今年我希望把精力放在个人成长、持续学习，以及和在意的人好好相处上。
 
-Welcome to my first blog post!  
+当然，我也会翻看以前的笔记，并继续在这里写下去。
 
-As we step into 2026, I would like to share my hopes and goals for the year ahead. This year, I want to focus on personal growth, continuous learning, and spending meaningful time with the people I care about.
+## 加强专业能力
 
-Of course, I will revisit my old notes and continue writing here.
+首先，我希望加强自己的专业能力，尤其是**编程**。为此，我打算跟着 [csdiy.wiki](https://csdiy.wiki/) 上的学习路线和建议，修几门海外大学的优质课程。我的目标不只是把课上完，而是通过实际项目和动手练习，把学到的东西用起来。
 
-## Strengthening Professional Skills
+## 参与 AI Infra的开源
 
-First, I hope to strengthen my professional skills, especially in **programming**. To achieve this, I plan to follow the learning paths and recommendations on [csdiy.wiki](https://csdiy.wiki/) and take several high-quality courses from overseas universities. My goal is not only to complete these courses, but also to apply what I learn through practical projects and hands-on practice.
+其次，我希望积极参与**开源项目**，特别是 **AI Infra**这一块。通过参与开源社区，我想更了解真实的系统，提高工程能力，也和志同道合的人一起做事。
 
-## Contributing to Open Source in AI Infrastructure
+## 养成稳定的运动习惯
 
-Second, I hope to actively participate in **open-source projects**, particularly in the field of **AI infrastructure**. By contributing to open-source communities, I want to gain a deeper understanding of real-world systems, improve my engineering skills, and collaborate with others who share similar interests.
+最后，我想养成稳定的**运动习惯**。今年一个具体目标是跑完一次**半程马拉松**，并且成绩让自己满意。对我来说，跑步不只是保持健康，也是在练习自律和长期坚持。
 
-## Building a Consistent Exercise Routine
-
-Finally, I want to build a consistent **exercise routine**. One of my concrete goals for this year is to complete a **half marathon** with a satisfying result. I see running not only as a way to stay healthy, but also as a practice of discipline and long-term commitment.
-
-I look forward to looking back at this post at the end of the year and seeing how far I have come.
+我期待年底再回头看这篇文章，看看自己走出了多远。

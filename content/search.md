@@ -1,8 +1,6 @@
 ---
-title: "Search" # in any language you want
-layout: "search" # necessary for search
-# url: "/archive"
-# description: "Description for Search"
+title: "搜索"
+layout: "search"
+placeholder: "搜索文章..."
 summary: "search"
-placeholder: "placeholder text in search input box"
 ---

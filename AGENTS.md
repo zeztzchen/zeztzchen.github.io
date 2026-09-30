@@ -1,24 +1,40 @@
-# Repository Guidelines
+# 仓库说明
 
-## Project Structure & Module Organization
-This repository is a Hugo static site using the PaperMod theme. Core site settings live in `hugo.yaml`. Write source content in `content/`, with posts under `content/posts/` and utility pages such as `archives.md` and `search.md` at the content root. Use `archetypes/default.md` as the template for new pages. Site-level overrides belong in `layouts/`, and custom styling belongs in `assets/css/extended/`. The `themes/PaperMod/` directory contains the upstream theme; avoid editing it unless the change is intentionally theme-specific. Generated output is in `public/` and is deployed by GitHub Pages.
+这是个人笔记站，用 Hugo 和 PaperMod 发布。在这里记录学习笔记，不是维护一个通用博客模板。
 
-## Build, Test, and Development Commands
-- `hugo server -D`: run the site locally, including draft content.
-- `hugo`: build the production site into `public/`.
-- `hugo --gc --minify`: match the main production build behavior more closely.
-- `hugo new posts/example-title.md`: create a new post from the default archetype.
+## 目录
 
-The GitHub Actions workflow in `.github/workflows/hugo.yaml` builds with Hugo Extended `0.154.2`, Dart Sass, Go, and Node.js, then deploys `public/` to GitHub Pages.
+- 站点配置在 `hugo.yaml`。
+- 笔记正文放在 `content/posts/`。`archives.md`、`search.md` 这类工具页留在 `content/` 根目录。
+- 新笔记用 `archetypes/default.md`，命令是 `hugo new posts/example-title.md`。
+- 站点级覆盖放 `layouts/`，自定义样式放 `assets/css/extended/`。
+- `themes/PaperMod/` 是上游主题，除非任务明确要求改主题，否则不要改。
+- `public/` 是构建产物，由 GitHub Pages 部署，不要手改。
 
-## Coding Style & Naming Conventions
-Use Markdown with YAML front matter for content. Keep post filenames lowercase and hyphenated, for example `content/posts/my-new-post.md`. Prefer concise titles, ISO-like dates with timezone offsets, and explicit metadata such as `description` and `tags`. Use two-space indentation in YAML lists and nested config blocks. Keep custom CSS in `assets/css/extended/` instead of changing theme CSS directly.
+## 写笔记
 
-## Testing Guidelines
-There is no separate automated test suite in this repository. Treat a clean Hugo build as the primary validation step before submitting changes. For content edits, run `hugo server -D` and check the affected pages, navigation, search page, and archive listing. For config, layout, or CSS changes, also run `hugo --gc --minify` to catch build-time issues.
+使用 Markdown 和 YAML front matter。文件名小写并用连字符，例如 `content/posts/rl-dp-mc-td.md`。
 
-## Commit & Pull Request Guidelines
-Recent commits use short imperative or descriptive messages, such as `update url` and `Add README with blog introduction`. Keep commits focused on one logical change. Pull requests should describe the content or behavior changed, note any Hugo build command run, link related issues when applicable, and include screenshots for visual changes.
+每篇笔记写上 `title`、带时区的 `date`（如 `2026-09-29T18:01:04+08:00`）、`description` 和 `tags`。学科用 `categories`，细概念用 `tags`，同一本书或课程的连续笔记用 `series`。含公式时设置 `math: true`，行内用 `$...$`，独立公式用 `$$...$$`。公式块里不要让某一行单独是 `=`，也不要让行首是 `+ ` 或 `- `，否则 Markdown 会把它当成标题或列表。
 
-## Agent-Specific Instructions
-Do not overwrite an existing `AGENTS.md`. Preserve user-authored content and avoid broad theme rewrites. Prefer small, local changes in `content/`, `layouts/`, or `assets/css/extended/` unless the task explicitly requires deeper theme work.
+未完成的笔记保持 `draft: true`。`hugo.yaml` 里 `buildDrafts: false`，草稿不会出现在正式构建中。
+
+站点目前只有中文。`hugo.yaml` 里的 `disableLanguages: [en]` 暂时关闭英文站，需要恢复时删掉这项。无后缀的页面属于中文；英文稿仍用 `.en.md` 保存，关闭期间不会发布。不要把两种语言写进同一篇。保留作者原来的表述，不要擅自改写成博客腔，也不要大段润色。
+
+YAML 列表和嵌套配置用两个空格缩进。
+
+## 构建
+
+- `hugo server -D`：本地预览，包含草稿。
+- `hugo`：构建到 `public/`。
+- `hugo --gc --minify`：更接近正式构建。
+
+推送到 `main` 后，GitHub Actions（`.github/workflows/hugo.yaml`）用 Hugo Extended `0.167.0` 构建，并把 `public/` 部署到 GitHub Pages。草稿不会进正式站点。
+
+改内容后用 `hugo server -D` 看对应笔记、导航、搜索和归档。改配置、布局或 CSS 后再跑 `hugo --gc --minify`。
+
+## 给后续协作的约束
+
+先读这份文件再改它，保留已有约定，不要整文件推倒重写。
+
+整理目录、批量重命名、改信息架构之前先和用户确认。美化只改 `assets/css/extended/` 和必要的 `layouts/` 覆盖。提交保持小而集中，说明为什么改。
