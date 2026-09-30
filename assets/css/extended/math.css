@@ -1,3 +1,7 @@
+.post-content .katex {
+  font-size: 1em;
+}
+
 .post-content .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
